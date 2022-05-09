@@ -1,0 +1,60 @@
+#logo{
+    text-decoration: none;
+    color: navy;
+    font-size: 26px;
+    font-weight: 700;
+}
+.logout{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 20px;
+    color: rgb(115, 112, 112);
+    padding: 10px 20px;
+}
+.logout:hover{
+    border-radius: 20px;
+    background: #564b59;
+}
+#logo:hover{
+    color: orange;
+}
+.link, .active-link{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 20px;
+    color: rgb(80, 78, 78);
+    padding: 10px 20px;
+}
+.link:hover, .active-link:hover{
+    color: orange;
+}
+.link:hover, .active-link{
+   color: orange;
+}
+.out-btn{
+    padding: 10px 20px;
+    border: none;
+}
+
+@media only screen and (max-width:576px) {
+    .logo{
+        font-size: 15px;
+    }
+    .link, .active-link{
+        font-size: 10px;
+        margin-right: 5px;
+        padding: 5px 10px;
+    }
+}
+@media only screen and (min-width:577px) and (max-width:992px) {
+    .logo{
+        font-size: 20px;
+    }
+    .link, .active-link{
+        font-size: 15px;
+        margin-right: 5px;
+        padding: 5px 10px;
+    }
+}
