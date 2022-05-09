@@ -1,0 +1,19 @@
+.custom-size{
+    height: 100px;
+    width: 100px;
+}
+
+.delete-btn{
+ font-size: 30px;
+ color: rgb(233, 0, 0);
+ margin-left: 5px;
+    
+}
+.edit-btn{
+    font-size: 25px;
+    color: rgb(0, 47, 122);
+}
+.delivery-success{
+    font-size: 30px;
+    color: rgb(60, 163, 0);
+}

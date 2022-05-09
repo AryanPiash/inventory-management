@@ -9,6 +9,8 @@ import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
+import ProductList from './Pages/ProductList/ProductList';
+import Quantity from './Pages/Quantity/Quantity';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
@@ -25,7 +27,12 @@ function App() {
             <ProductDetail></ProductDetail>
           </RequireAuth>
         }></Route>
-
+         <Route path='/productList' element={<RequireAuth>
+          <ProductList />
+        </RequireAuth>} />
+        <Route path='/quantity/:id' element={<RequireAuth>
+          <Quantity />
+        </RequireAuth>} />
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
