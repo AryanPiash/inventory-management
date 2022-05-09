@@ -2,13 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 // import { ToastContainer } from 'react-toastify';
 import './App.css';
 import About from './Pages/About/About';
+import AddedItems from './Pages/AddedItems/AddedItems';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
-import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import ProductList from './Pages/ProductList/ProductList';
 import Quantity from './Pages/Quantity/Quantity';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -22,16 +22,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path='/product/:productId' element={
-          <RequireAuth>
-            <ProductDetail></ProductDetail>
-          </RequireAuth>
-        }></Route>
          <Route path='/productList' element={<RequireAuth>
           <ProductList />
         </RequireAuth>} />
         <Route path='/quantity/:id' element={<RequireAuth>
           <Quantity />
+        </RequireAuth>} />
+        <Route path='/items' element={<RequireAuth>
+          <AddedItems />
         </RequireAuth>} />
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

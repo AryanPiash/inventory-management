@@ -3,15 +3,15 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
-// import auth from '../../Firebase/firebase.init';
+import auth from '../../../firebase.init';
 import './Header.css';
 
 const Header = () => {
-    // const [user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
-    // const handleSignout = () => {
-    //     signOut(auth);
-    // }
+    const handleSignout = () => {
+        signOut(auth);
+    }
     return (
         <Navbar className='py-2 fs-4 navbar-bg' sticky='top' expand="lg">
             <Container>

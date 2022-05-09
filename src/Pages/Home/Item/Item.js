@@ -7,7 +7,7 @@ const Item = ({ item }) => {
     const navigate = useNavigate();
 
     const navigateToItemDetail = id => {
-        navigate(`/product/${id}`);
+        navigate('/productList')
     }
     return (
         <div className='item'>

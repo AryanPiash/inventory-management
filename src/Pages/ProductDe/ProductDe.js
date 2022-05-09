@@ -6,12 +6,11 @@ import { CustomHook } from '../CustomHook/CustomHook';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-// import auth from '../../Firebase/firebase.init';
+import auth from '../../firebase.init';
 import './ProductDe.css'
 
 const ProductDe = ({ product }) => {
-    // const [user] = useAuthState(auth);
-    // console.log(user);
+    const [user] = useAuthState(auth);
     const { name, img, quantity, supplier, price } = product;
     const navigate = useNavigate();
     const edit = id =>{
@@ -29,7 +28,7 @@ const ProductDe = ({ product }) => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure delete this product?');
         if(proceed){
-            const url = `https://laptopstorebd.herokuapp.com/delete/${id}`;
+            const url = `http://localhost:5000/deleteProduct/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

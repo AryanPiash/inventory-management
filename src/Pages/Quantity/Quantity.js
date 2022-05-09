@@ -14,7 +14,7 @@ const Quantity = () => {
 
         const updateRestock = { quantity };
         // console.log(updateRestock);
-        const url = `https://laptopstorebd.herokuapp.com/update/${id}`;
+        const url = `http://localhost:5000/update/${id}`;
         console.log(url);
         fetch(url, {
             method: 'PUT',
@@ -41,7 +41,7 @@ const Quantity = () => {
         const quantity = e.target.quantity.value - 1;
         const updateQuantity = { quantity }
         console.log(updateQuantity);
-        const url = `https://laptopstorebd.herokuapp.com/update/${id}`;
+        const url = `http://localhost:5000/update/${id}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify(
@@ -53,7 +53,7 @@ const Quantity = () => {
         })
             .then(response => response.json())
             .then(data => {
-                // setProducts(data)
+                setProduct(data)
                 toast('Product Deliverd Success')
                 console.log(data);
 
@@ -83,18 +83,15 @@ const Quantity = () => {
                             <Card.Text>
                                 {product.des}
                             </Card.Text>
-                            {/* <Card.Text>
-                                <p>Quantity: {product.quantity}</p>
-                            </Card.Text> */}
                             <Card.Text>
-                                <p>Supplier: {product.supplier}</p>
+                                <p>Supplier: {product.suplier}</p>
                             </Card.Text>
                             <Card.Text>
                                 <p>Price: {product.price} $</p>
                             </Card.Text>
                             <form onSubmit={handleQuantity}>
                                 
-                                <FormLabel>Quantity: </FormLabel>
+                                <FormLabel>Quantity here: </FormLabel>
                                 <input className='ms-2 border border-white' type="number" name="quantity" value={product.quantity} readOnly />
 
                                 <button className='btn btn-warning'>DELIVERD</button>

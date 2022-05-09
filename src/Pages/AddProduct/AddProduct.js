@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-// import auth from '../../Firebase/firebase.init';
+import auth from '../../firebase.init';
 import './AddProduct.css'
 
 const AddProduct = () => {

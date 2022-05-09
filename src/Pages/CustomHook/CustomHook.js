@@ -5,7 +5,7 @@ export const CustomHook = () => {
     const [isReload, setIsreload]= useState(false);
 
     useEffect(() => {
-        fetch('https://laptopstorebd.herokuapp.com/produts')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
