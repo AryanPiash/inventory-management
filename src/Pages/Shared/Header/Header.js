@@ -24,16 +24,14 @@ const Header = () => {
                         <NavLink className={({ isActive }) =>
                             isActive ? "active-link" : "link"} to="/home">Home</NavLink>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "active-link" : "link"} to="/about">About</NavLink>
+                            isActive ? "active-link" : "link"} to="/productAdd">Upload</NavLink>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "active-link" : "link"} to="/productAdd">Product upload</NavLink>
-                        <NavLink className={({ isActive }) =>
-                            isActive ? "active-link" : "link"} to="/productList">Product Inventory</NavLink>
+                            isActive ? "active-link" : "link"} to="/productList">Inventory</NavLink>
                         <NavLink className={({ isActive }) =>
                             isActive ? "active-link" : "link"} to="/blog">Blog</NavLink>
                         <NavLink className={({ isActive }) =>
                             isActive ? "active-link" : "link"} to="/items">My items</NavLink>
-                        {/* {
+                        {
                             user ?
                                 <p className='btn btn-gray font-weight-bold' onClick={handleSignout}> {user.displayName}<span className='logout'>Log out</span></p>
                                 :
@@ -43,7 +41,7 @@ const Header = () => {
                                     <NavLink className={({ isActive }) =>
                                         isActive ? "active-link" : "link"} to="/register">Sign up</NavLink>
                                 </>
-                        } */}
+                        }
 
                     </Nav>
                 </Navbar.Collapse>
