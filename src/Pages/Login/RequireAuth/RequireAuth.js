@@ -9,6 +9,7 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
     const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
+    console.log(error);
     if (loading) {
         return <Loading></Loading>
     }
@@ -19,10 +20,10 @@ const RequireAuth = ({ children }) => {
     
     if (user.providerData[0]?.providerId ==='password' && !user.emailVerified) {
         return <div className='text-center mt-5'>
-            <h3 className='text-danger'>Your Email is not verified!!</h3>
-            <h5 className='text-success'> Please Verify your email address</h5>
+            <h3 className='text-danger display-4'>Your Email is not verified!!</h3>
+            <h5 className='text-success display-6 my-4 '> Please Verify your email address <br /> or <br /> try with valid email address.</h5>
             <button
-            className='btn btn-primary'
+            className='btn btn-warning my-4'
                 onClick={async () => {
                     await sendEmailVerification();
                     toast('Sent email');

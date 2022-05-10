@@ -11,7 +11,7 @@ const AddProduct = () => {
     const [product, setProduct] = useState([]);
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    // console.log(user);
+    
     const handleUpload = (event) => {
         event.preventDefault();
         const email = event.target.email.value;

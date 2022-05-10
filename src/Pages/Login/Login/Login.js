@@ -31,12 +31,13 @@ const Login = () => {
     }
 
     if (user) {
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
 
     if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        errorElement = <h5 className='text-danger mb-3'>Error: {error?.message}</h5>
     }
+    
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -46,13 +47,9 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
         const {data} = await axios.post('http://localhost:5000/login', {email});
         localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
     }
 
-    const navigateRegister = event => {
-        navigate('/register');
-    }
-
+    
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
@@ -97,6 +94,7 @@ const Login = () => {
                         <p>OR</p>
                         <div className='line-right' />
                     </div>
+                    
                     {errorElement}
                    
                     <SocialLogin></SocialLogin>

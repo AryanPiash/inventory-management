@@ -16,16 +16,12 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const navigateLogin = () => {
-        navigate('/login');
-    }
-
     if (loading || updating) {
         return <Loading></Loading>
     }
 
     if (user) {
-        console.log('user', user);
+        navigate('/home');
     }
 
     const handleRegister = async (event) => {
@@ -36,8 +32,6 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        console.log('Updated profile');
-        navigate('/home');
     }
 
     return (
