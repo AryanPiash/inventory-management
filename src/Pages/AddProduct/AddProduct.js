@@ -14,19 +14,21 @@ const AddProduct = () => {
     // console.log(user);
     const handleUpload = (event) => {
         event.preventDefault();
-        const email = event.target.email.value;
+        // const email = event.target.email.value;
         const name = event.target.name.value;
         const img = event.target.img.value;
-        const des = event.target.des.value;
+        const description = event.target.description.value;
         const quantity = event.target.quantity.value;
-        const supplier = event.target.supplier.value;
+        const suplier = event.target.suplier.value;
         const price = event.target.price.value;
-        const item = { email, name, img, des, quantity, supplier, price };
-        const url = `https://laptopstorebd.herokuapp.com/productAdd`;
+        // const item = { email, name, img, description, quantity, suplier, price };
+        const item = { name, img, description, quantity, suplier, price };
+        // const url = `https://laptopstorebd.herokuapp.com/productAdd`;
+        const url = `http://localhost:5000/productAdd`;
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
-                name, img, des, quantity, supplier, price
+                name, img, description, quantity, suplier, price
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -68,15 +70,15 @@ const AddProduct = () => {
 
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
                                             <Form.Label>Descriptions</Form.Label>
-                                            <Form.Control as="textarea" rows={3} type="text" name='des' placeholder="Descriptions" required />
+                                            <Form.Control as="textarea" rows={3} type="text" name='description' placeholder="Descriptions" required />
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicQuantity">
                                             <Form.Label>Quantity</Form.Label>
                                             <Form.Control type="number" name='quantity' placeholder="Quantity" required />
                                         </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicSupplier">
-                                            <Form.Label>Supplier</Form.Label>
-                                            <Form.Control type="text" name='supplier' placeholder="Supplier" required />
+                                        <Form.Group className="mb-3" controlId="formBasicSuplier">
+                                            <Form.Label>Suplier</Form.Label>
+                                            <Form.Control type="text" name='suplier' placeholder="Suplier" required />
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicPrice">
                                             <Form.Label>Price</Form.Label>

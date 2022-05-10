@@ -16,7 +16,7 @@ const ProductList = () => {
                         <th>Quantity</th>
                         <th>Image</th>
                         <th>Price</th>
-                        <th>Supplier</th>
+                        <th>Suplier</th>
                         <th>Action</th>
                     </tr>
                 </thead>

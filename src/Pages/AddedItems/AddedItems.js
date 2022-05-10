@@ -1,21 +1,20 @@
 import axios from 'axios';
-import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-// import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 // import axiosPrivate from '../axios/axiosPrivate';
 
 const AddedItems = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
     const [items, setItems] = useState([]);
     
     useEffect(() => {
         const getItems = async () => {
             const email = user?.email;
+            
             const url = `https://laptopstorebd.herokuapp.com/item?email=${email}`;
+            // const url = `http://localhost:5000/product`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +37,7 @@ const AddedItems = () => {
                         <th>Details</th>
                         <th>Quantity</th>
                         <th>Price</th>
-                        <th>Supplier</th>
+                        <th>Suplier</th>
                         <th>Image</th>
                     </tr>
                 </thead>
@@ -47,10 +46,10 @@ const AddedItems = () => {
                         <tbody key={item._id}>
                             <tr>
                                 <td>{item.name}</td>
-                                <td>{item.des}</td>
+                                <td>{item.description}</td>
                                 <td>{item.quantity}</td>
                                 <td>{item.price}</td>
-                                <td>{item.supplier}</td>
+                                <td>{item.suplier}</td>
                                 <td>{ <img className='border rounded-circle custom-size' src={item.img} alt="" /> }</td>
 
                             </tr>

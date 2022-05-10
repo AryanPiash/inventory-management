@@ -81,10 +81,10 @@ const Quantity = () => {
                         <Card.Body>
                             <Card.Title>{product.name}</Card.Title>
                             <Card.Text>
-                                {product.des}
+                                {product.description}
                             </Card.Text>
                             <Card.Text>
-                                <p>Supplier: {product.suplier}</p>
+                                <p>Suplier: {product.suplier}</p>
                             </Card.Text>
                             <Card.Text>
                                 <p>Price: {product.price} $</p>

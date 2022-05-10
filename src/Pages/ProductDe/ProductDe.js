@@ -11,7 +11,7 @@ import './ProductDe.css'
 
 const ProductDe = ({ product }) => {
     const [user] = useAuthState(auth);
-    const { name, img, quantity, supplier, price } = product;
+    const { name, img, quantity, suplier, price } = product;
     const navigate = useNavigate();
     const edit = id =>{
         navigate(`/editProduct/${id}`);
@@ -49,7 +49,7 @@ const ProductDe = ({ product }) => {
                 <img className='border rounded-circle custom-size' src={img} alt="" />
             </td>
             <td>{price} $</td>
-            <td>{supplier}</td>
+            <td>{suplier}</td>
             <td>
                 <div className="d-flex">
                    
