@@ -8,20 +8,20 @@ import banner3 from '../../../images/banner/banner3.jpg';
 const Banner = () => {
     const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
     return (
         <Carousel activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
-                <img  height={600}
+                <img height={600}
                     className="d-block w-100"
                     src={banner3}
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Most populer laptop Mangement warehouse</h3>
+                    <p>We have stocked and delivered many of items laptop in most populer Brand in this world.Any type of laptop can managable for us and quick deliver for client sasitfying.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -32,22 +32,20 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Most populer laptop Mangement warehouse</h3>
+                    <p>We have stocked and delivered many of items laptop in most populer Brand in this world.Any type of laptop can managable for us and quick deliver for client sasitfying.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item >
-                <img  height={600}
+                <img height={600}
                     className="d-block w-100"
                     src={banner1}
                     alt="Third slide"
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
+                    <h3>Most populer laptop Mangement warehouse</h3>
+                    <p>We have stocked and delivered many of items laptop in most populer Brand in this world.Any type of laptop can managable for us and quick deliver for client sasitfying.</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

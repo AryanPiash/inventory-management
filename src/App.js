@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AddedItems from './Pages/AddedItems/AddedItems';
 import AddProduct from './Pages/AddProduct/AddProduct';
+import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -29,6 +30,7 @@ function App() {
         <Route path='/items' element={<RequireAuth>
           <AddedItems />
         </RequireAuth>} />
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/productAdd" element={<AddProduct></AddProduct>}></Route>

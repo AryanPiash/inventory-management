@@ -7,7 +7,6 @@ export const SingleHookProduct = () => {
     const{id} =useParams()
 
     useEffect(() => {
-        // fetch(`https://laptopstorebd.herokuapp.com/product/${id}`)
         fetch(`http://localhost:5000/product/${id}`)
             .then(res => res.json())
             .then(data => {
