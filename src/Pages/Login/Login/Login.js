@@ -92,7 +92,7 @@ const Login = () => {
         <div>
             <div className='auth-form-container '>
                 <div className='auth-form'>
-                    <h1 className='py-2'>Sign in Here</h1>
+                    <h1 className='py-4'>Sign in Here</h1>
 
                     <form onSubmit={handleSubmit}>
                         <div className='input-field'>
@@ -130,6 +130,7 @@ const Login = () => {
                             <p>Continue with Google</p>
                         </button>
                     </div> */}
+                    <SocialLogin></SocialLogin>
                 </div>
                 {/* <ToastContainer /> */}
             </div>

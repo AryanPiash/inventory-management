@@ -14,10 +14,10 @@ const SocialLogin = () => {
     const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-    
+
     let errorElement;
 
-    if(loading || loading1){
+    if (loading || loading1) {
         return <Loading></Loading>
     }
 
@@ -31,27 +31,24 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <div className='d-flex align-items-center'>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-                <p className='mt-2 px-2'>or</p>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-            </div>
+
             {errorElement}
-            <div className=''>
-                <button
+            {/* <div className=''> */}
+                <button style={{ width: '415px',height: '55px' }}
                     onClick={() => signInWithGoogle()}
-                    className='btn btn-white border w-50 d-block mx-auto my-2'>
+                    className='btn btn-white border-warning d-block my-2 shadow-sm fw-bold'>
                     <img style={{ width: '30px' }} src={google} alt="" />
                     <span className='px-2'>Continue with Google</span>
                 </button>
+
+                    <button  style={{ width: '415px',height: '55px' }}
+                        onClick={() => signInWithGithub()}
+                        className='btn btn-white border-warning shadow-sm fw-bold'>
+                        <img style={{ width: '30px' }} src={github} alt="" />
+                        <span className='px-2'>Continue with Github</span>
+                    </button>
                 
-                <button
-                    onClick={() => signInWithGithub()}
-                    className='btn btn-white border w-50 d-block mx-auto'>
-                    <img style={{ width: '30px' }} src={github} alt="" />
-                    <span className='px-2'>Continue with Github</span>
-                </button>
-            </div>
+            {/* </div> */}
         </div>
     );
 };

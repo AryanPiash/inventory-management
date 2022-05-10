@@ -48,10 +48,11 @@
     border: none;
     border-radius: 5px;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
+    font-weight: 500;
     cursor: pointer;
     color: white;
-    background: linear-gradient(25deg, #F91E48 0%, #F91E40 100%);
+    background: linear-gradient(25deg, #fb5c7c 0%, #ff0505 100%);
   }
   
   .google-auth {
