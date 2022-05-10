@@ -10,20 +10,19 @@ import './AddProduct.css'
 const AddProduct = () => {
     const [product, setProduct] = useState([]);
     const navigate = useNavigate();
-    // const [user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     // console.log(user);
     const handleUpload = (event) => {
         event.preventDefault();
-        // const email = event.target.email.value;
+        const email = event.target.email.value;
         const name = event.target.name.value;
         const img = event.target.img.value;
         const description = event.target.description.value;
         const quantity = event.target.quantity.value;
         const suplier = event.target.suplier.value;
         const price = event.target.price.value;
-        // const item = { email, name, img, description, quantity, suplier, price };
-        const item = { name, img, description, quantity, suplier, price };
-        // const url = `https://laptopstorebd.herokuapp.com/productAdd`;
+        const item = { email, name, img, description, quantity, suplier, price };
+
         const url = `http://localhost:5000/productAdd`;
         fetch(url, {
             method: 'POST',
@@ -36,7 +35,7 @@ const AddProduct = () => {
         })
             .then((response) => response.json())
             .then((data) => setProduct(data));
-        const urlItem = 'https://laptopstorebd.herokuapp.com/item';
+        const urlItem = 'http://localhost:5000/item';
         axios.post(urlItem, item)
             .then(response => {
                 console.log(response);
@@ -57,7 +56,7 @@ const AddProduct = () => {
                                     <Form onSubmit={handleUpload}>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Email</Form.Label>
-                                            {/* <Form.Control type="email" name='email' value={user.email} placeholder="Enter product name" readOnly required /> */}
+                                            <Form.Control type="email" name='email' value={user.email} placeholder="Enter product name" readOnly required />
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Product Name</Form.Label>

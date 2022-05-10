@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-// import axiosPrivate from '../axios/axiosPrivate';
+
 
 const AddedItems = () => {
     const [user] = useAuthState(auth);
@@ -13,8 +13,7 @@ const AddedItems = () => {
         const getItems = async () => {
             const email = user?.email;
             
-            const url = `https://laptopstorebd.herokuapp.com/item?email=${email}`;
-            // const url = `http://localhost:5000/product`;
+            const url = `http://localhost:5000/product`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

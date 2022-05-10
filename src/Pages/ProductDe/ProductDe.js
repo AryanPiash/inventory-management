@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillDelete, AiOutlineDeliveredProcedure } from 'react-icons/ai';
 import { FaEdit } from 'react-icons/fa';
-import { GrView } from 'react-icons/gr';
 import { CustomHook } from '../CustomHook/CustomHook';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -13,6 +12,8 @@ const ProductDe = ({ product }) => {
     const [user] = useAuthState(auth);
     const { name, img, quantity, suplier, price } = product;
     const navigate = useNavigate();
+
+    
     const edit = id =>{
         navigate(`/editProduct/${id}`);
     }
