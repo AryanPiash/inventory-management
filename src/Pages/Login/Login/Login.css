@@ -25,21 +25,17 @@
     margin-bottom: 20px;
   }
   
-  .input-wrapper {
-    padding: 1px;
-    border-radius: 7px;
-    background: #F91E48;
-  }
   
   .input-field input {
     width: 415px;
     height: 55px;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 15px;
     font-size: 20px;
     border: none;
     background-color: #fff;
     outline: none;
+    border: 1px solid #F91E48;
   }
   
   .auth-form-submit {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import './Register.css';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
@@ -13,7 +12,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
@@ -22,12 +21,12 @@ const Register = () => {
         navigate('/login');
     }
 
-    if(loading || updating){
+    if (loading || updating) {
         return <Loading></Loading>
     }
 
     if (user) {
-     console.log('user', user);  
+        console.log('user', user);
     }
 
     const handleRegister = async (event) => {
@@ -35,7 +34,6 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        // const agree = event.target.terms.checked;
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
@@ -44,25 +42,39 @@ const Register = () => {
     }
 
     return (
-        <div className='register-form'>
-            <h2 style={{ textAlign: 'center' }}>Please Register</h2>
-            <form onSubmit={handleRegister}>
-                <input type="text" name="name" id="" placeholder='Your Name' />
 
-                <input type="email" name="email" id="" placeholder='Email Address' required />
-
-                <input type="password" name="password" id="" placeholder='Password' required />
-                <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                {/* <label className={agree ? 'ps-2': 'ps-2 text-danger'} htmlFor="terms">Accept Genius Car Terms and Conditions</label> */}
-                <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor="terms">Accept Genius Car Terms and Conditions</label>
-                <input
-                    disabled={!agree}
-                    className='w-50 mx-auto btn btn-primary mt-2'
-                    type="submit"
-                    value="Register" />
-            </form>
-            <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
-            <SocialLogin></SocialLogin>
+        <div className='container'>
+            <div className='auth-form-container '>
+                <div className='auth-form'>
+                    <h1 className='py-2'>Sign up Here</h1>
+                    <form onSubmit={handleRegister}>
+                        <div className='input-field'>
+                            <input type='text' name='name' id='name' placeholder='Enter your Name' required />
+                        </div>
+                        <div className='input-field'>
+                            <input type='email' name='email' id='email' placeholder='Enter your email' required />
+                        </div>
+                        <div className='input-field'>
+                            <div className='input-wrapper'>
+                                <input type='password' name='password' id='password' placeholder='Enter your password' required />
+                            </div>
+                        </div>
+                        <button type='submit' className='auth-form-submit'>
+                            Register
+                        </button>
+                    </form>
+                    <p className='redirect'>
+                        Already have an account ?
+                        <Link to="/login" className='account-link'> Sign in</Link>
+                    </p>
+                    <div className='horizontal-divider'>
+                        <div className='line-left' />
+                        <p>OR</p>
+                        <div className='line-right' />
+                    </div>
+                    <SocialLogin></SocialLogin>
+                </div>
+            </div>
         </div>
     );
 };
