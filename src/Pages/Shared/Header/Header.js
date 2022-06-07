@@ -22,7 +22,7 @@ const Header = () => {
                         style={{ maxHeight: '350px' }}
                         navbarScroll>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "active-link" : "link"} to="/home">Home</NavLink>
+                            isActive ? "active-link" : "link"} to="/">Home</NavLink>
                         <NavLink className={({ isActive }) =>
                             isActive ? "active-link" : "link"} to="/blogs">Blog</NavLink>
 

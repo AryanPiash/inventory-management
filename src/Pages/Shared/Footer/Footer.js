@@ -6,6 +6,7 @@ import { BsLaptop } from "react-icons/bs";
 import './Footer.css'
 
 const Footer = () => {
+    // footer section
     return (
         <div className="footer container-fluid pt-5">
             <div className="container ">
@@ -34,8 +35,6 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                {/* <h4 className=' py-2 text-center'>All rights &copy; belongs to <span className='text-white'>
-                <BsLaptop /> Laptop Store {new Date().getFullYear()}</span></h4> */}
                 <h5 className='text-white text-center'> &copy; belongs to Laptop Management. All right reserved. </h5>
             </div>
         </div>

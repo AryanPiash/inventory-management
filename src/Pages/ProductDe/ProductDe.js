@@ -17,19 +17,15 @@ const ProductDe = ({ product }) => {
     const edit = id =>{
         navigate(`/editProduct/${id}`);
     }
-    const handleQuantity = id =>{
-        navigate(`/quantity/${id}`);
-    }
     
 
     const [products, setProducts] = CustomHook();
-    const [count, setCount] =useState(0);
     const {id} = useParams();
 
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure delete this product?');
         if(proceed){
-            const url = `http://localhost:5000/deleteProduct/${id}`;
+            const url = `https://laptop-management.herokuapp.com/deleteProduct/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -56,7 +52,7 @@ const ProductDe = ({ product }) => {
                    
                     <button onClick={()=>edit(product._id)} className='btn'><span className='edit-btn'><FaEdit /> </span></button>
                     <button onClick={()=>handleDelete(product._id)} className='btn'><span className='delete-btn'><AiFillDelete /></span></button>
-                    <button onClick={()=>handleQuantity(product._id)} className='btn'><span className='delivery-success'><AiOutlineDeliveredProcedure /></span></button>
+                   
                 </div>
             </td>
         </tr>

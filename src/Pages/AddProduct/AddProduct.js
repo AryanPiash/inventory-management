@@ -23,7 +23,7 @@ const AddProduct = () => {
         const price = event.target.price.value;
         const item = { email, name, img, description, quantity, suplier, price };
 
-        const url = `http://localhost:5000/productAdd`;
+        const url = `https://laptop-management.herokuapp.com/productAdd`;
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
@@ -35,7 +35,7 @@ const AddProduct = () => {
         })
             .then((response) => response.json())
             .then((data) => setProduct(data));
-        const urlItem = 'http://localhost:5000/item';
+        const urlItem = 'https://laptop-management.herokuapp.com/item';
         axios.post(urlItem, item)
             .then(response => {
                 console.log(response);
